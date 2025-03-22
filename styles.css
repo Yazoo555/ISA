@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1a1e2e;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+header {
+  padding: 20px 0;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+header span {
+  color: #a78bfa;
+  font-size: 24px;
+  font-weight: bold;
+  float: left;
+}
+
+nav {
+  float: right;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+#home {
+  padding: 20px 0;
+}
+
+#home div:first-of-type {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#home h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+#home p {
+  color: #d1d5db;
+  margin-bottom: 20px;
+  width: 60%;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+#home span button:first-child {
+  background-color: #a78bfa;
+  color: white;
+  border: none;
+}
+
+#home span button:last-child {
+  background-color: transparent;
+  color: white;
+  border: 1px solid #a78bfa;
+}
+
+#home img {
+  width: 35%;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  float: right;
+}
+
+h2 {
+  color: #a78bfa;
+  font-size: 28px;
+  margin: 40px 0 20px 0;
+  clear: both;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th,
+td {
+  border: 1px solid #3a4056;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #252a3d;
+  color: #a78bfa;
+}
+
+/* Simple Interest & Hobbies Layout */
+.interests-container {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.interest-box {
+  width: 30%;
+  float: left;
+  margin-right: 3%;
+  margin-bottom: 20px;
+  border: 1px solid #a78bfa;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  min-height: 200px;
+}
+
+.interest-box .icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.interest-box h3 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.interest-box h3.purple {
+  color: #a78bfa;
+}
+
+.interest-box p {
+  color: #d1d5db;
+  font-size: 14px;
+}
+
+section:nth-of-type(3) div {
+  background-color: #252a3d;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+section:nth-of-type(3) img {
+  width: 35%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+section:nth-of-type(3) div div {
+  color: #a78bfa;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+section:nth-of-type(4) {
+  margin-top: 40px;
+  overflow: hidden;
+}
+
+section:nth-of-type(4) div {
+  width: 48%;
+  float: left;
+  margin-right: 2%;
+}
+
+section:nth-of-type(4) div p:first-child {
+  color: #a78bfa;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #252a3d;
+  border: 1px solid #3a4056;
+  border-radius: 5px;
+  color: white;
+}
+
+textarea {
+  height: 150px;
+}
+
+form button {
+  background-color: #a78bfa;
+  color: white;
+  border: none;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  border-top: 1px solid #3a4056;
+  clear: both;
+}
+
+footer p {
+  margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+  header span,
+  nav {
+    float: none;
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  #home p {
+    width: 100%;
+  }
+
+  #home img {
+    width: 100%;
+    float: none;
+  }
+
+  section:nth-of-type(4) div {
+    width: 100%;
+    float: none;
+    margin-bottom: 20px;
+  }
+
+  .interest-box {
+    width: 47%;
+    margin-right: 3%;
+  }
+}
+
+@media (max-width: 480px) {
+  .interest-box {
+    width: 100%;
+    margin-right: 0;
+  }
+}
