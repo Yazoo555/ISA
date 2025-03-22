@@ -1,0 +1,15 @@
+.to-block {
+    display: block;
+    background: pink;
+  }
+  
+  .to-inline {
+    display: inline;
+    background: lightgreen;
+  }
+  
+  .to-inline-block {
+    display: inline-block;
+    width: 100px;
+    background: lightyellow;
+  }

@@ -1,0 +1,28 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  color: white;
+  text-align: center;
+  line-height: 100px;
+  margin: 10px;
+}
+
+.float-left {
+  float: left;
+  background-color: #3498db; /* Blue */
+}
+
+.float-right {
+  float: right;
+  background-color: #e74c3c; /* Red */
+}
+
+.clear {
+  clear: both;
+}

@@ -1,11 +1,11 @@
-/* 1. Universal Selector */
+/* Universal Selector */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 2. Element Selector */
+/* Element Selector */
 form {
   max-width: 500px;
   margin: 20px auto;
@@ -14,7 +14,7 @@ form {
   background-color: #f9f9f9;
 }
 
-/* 3. ID Selector */
+/* ID Selector */
 #contactForm {
   text-align: center;
 }
@@ -26,7 +26,7 @@ label {
   font-weight: bold;
 }
 
-/* 4. Class Selector */
+/*  Class Selector */
 .form-field {
   width: 100%;
   padding: 10px;
@@ -35,7 +35,7 @@ label {
   border-radius: 5px;
 }
 
-/* 5. Attribute Selector */
+/*  Attribute Selector */
 input[type="submit"] {
   background-color: #4caf50;
   color: white;

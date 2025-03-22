@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.box {
+  width: 200px;
+  height: 100px;
+  background-color: #42cc9e;
+  text-align: center;
+  line-height: 100px;
+
+  padding: 20px;
+
+  border: 5px solid #df9628;
+
+  margin: 30px;
+}
+
+.container {
+  background-color: #898adf;
+  display: inline-block;
+  padding: 30px;
+}
