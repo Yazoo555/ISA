@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Search Application</title>
+    <link rel="stylesheet" href="script.css" />
+  </head>
+  <body>
+    <h1>Movie Search Application</h1>
+
+    <div class="search-container">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Enter movie title to Search..."
+      />
+      <button onclick="fetchMovie()">Search</button>
+    </div>
+
+    <div id="movieResult" class="movie-container" style="display: none">
+      <div class="movie-header">
+        <div class="movie-details">
+          <h2 id="movie"></h2>
+          <p>Year: <span id="year"></span></p>
+          <p>IMDb Rating: <span id="rating"></span></p>
+        </div>
+        <img id="poster" alt="Movie Poster" />
+      </div>
+
+      <div class="movie-info-grid">
+        <div class="info-item">
+          <h3>Director</h3>
+          <p id="director"></p>
+        </div>
+
+        <div class="info-item">
+          <h3>Writer</h3>
+          <p id="writer"></p>
+        </div>
+
+        <div class="info-item">
+          <h3>Actors</h3>
+          <p id="actors"></p>
+        </div>
+
+        <div class="info-item">
+          <h3>Language</h3>
+          <p id="language"></p>
+        </div>
+      </div>
+
+      <div>
+        <h3>Plot</h3>
+        <p id="plot"></p>
+      </div>
+    </div>
+
+    <div id="errorMessage" class="error-message" style="display: none"></div>
+
+    <div class="attribution">
+      Powered by <a href="http://www.omdbapi.com/">OMDb API</a>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
