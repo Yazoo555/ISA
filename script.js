@@ -9,6 +9,7 @@ const elements = {
   humid: document.getElementById("humidity"),
   wind: document.getElementById("windSpeed"),
   dir: document.getElementById("windDirection"),
+  error: document.getElementById("errorMsg"),
 };
 
 document.getElementById("date").textContent = new Date().toDateString();
@@ -37,6 +38,9 @@ async function getWeather(city) {
 
 elements.btn.onclick = function () {
   if (elements.input.value.trim()) getWeather(elements.input.value.trim());
+  else {
+    elements.city.textContent = "Please enter a city name";
+  }
 };
 
 getWeather("Bhaktapur");
