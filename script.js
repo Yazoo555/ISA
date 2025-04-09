@@ -44,4 +44,5 @@ elements.btn.onclick = function () {
   }
 };
 
-getWeather("Bhaktapur");
+getWeather("Khalanga");
+// getWeather("Dasharathchand");
