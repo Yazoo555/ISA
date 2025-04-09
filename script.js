@@ -12,7 +12,18 @@ const elements = {
   error: document.getElementById("errorMsg"),
 };
 
+function resetWeatherData() {
+  elements.temp.innerHTML = ` `;
+  elements.desc.innerHTML = ` `;
+  elements.press.innerHTML = ` `;
+  elements.humid.innerHTML = ` `;
+  elements.wind.innerHTML = ` `;
+  elements.dir.innerHTML = ` `;
+  elements.icon.src = "https://cdn-icons-png.flaticon.com/512/1304/1304038.png";
+}
+
 document.getElementById("date").textContent = new Date().toDateString();
+
 const API_key = "2f784d9bff56f9b8cd741b329a162245";
 
 async function getWeather(city) {
@@ -33,7 +44,9 @@ async function getWeather(city) {
     elements.dir.innerHTML = `${data.wind.deg}°`;
     elements.icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
   } catch (error) {
-    elements.city.innerHTML = "City not found";
+    // handle the error here
+    resetWeatherData();
+    elements.city.innerHTML = "Invalid input!";
   }
 }
 
@@ -41,6 +54,7 @@ elements.btn.onclick = function () {
   if (elements.input.value.trim()) getWeather(elements.input.value.trim());
   else {
     elements.city.innerHTML = "Please enter a city name";
+    resetWeatherData();
   }
 };
 
