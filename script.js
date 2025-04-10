@@ -12,7 +12,7 @@ const elements = {
   error: document.getElementById("errorMsg"),
 };
 
-function resetWeatherData() {
+function errorWeatherData() {
   elements.temp.innerHTML = ` `;
   elements.desc.innerHTML = ` `;
   elements.press.innerHTML = ` `;
@@ -44,9 +44,8 @@ async function getWeather(city) {
     elements.dir.innerHTML = `${data.wind.deg}°`;
     elements.icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
   } catch (error) {
-    // handle the error here
-    resetWeatherData();
-    elements.city.innerHTML = "Invalid input!";
+    errorWeatherData();
+    elements.city.innerHTML = "City Not Found or Invalid input!";
   }
 }
 
@@ -54,7 +53,7 @@ elements.btn.onclick = function () {
   if (elements.input.value.trim()) getWeather(elements.input.value.trim());
   else {
     elements.city.innerHTML = "Please enter a city name";
-    resetWeatherData();
+    errorWeatherData();
   }
 };
 
