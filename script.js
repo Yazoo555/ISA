@@ -35,7 +35,6 @@ async function getWeather(city) {
     if (!Array.isArray(data) || data.length === 0) {
       throw new Error("No data returned");
     }
-
     const weather = data[data.length - 1];
 
     elements.city.innerHTML = city;
