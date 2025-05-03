@@ -11,7 +11,7 @@ mysqli_query($conn, "CREATE DATABASE IF NOT EXISTS $database");
 mysqli_select_db($conn, $database);
 
 $createTable = "CREATE TABLE IF NOT EXISTS weather (
-    id INT  PRIMARY KEY,
+    id  PRIMARY KEY,
     city VARCHAR(100),
     humidity FLOAT NOT NULL,
     wind FLOAT NOT NULL,
@@ -22,7 +22,6 @@ $createTable = "CREATE TABLE IF NOT EXISTS weather (
     description VARCHAR(100),
     last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )";
-
 mysqli_query($conn, $createTable);
 
 $cityName = isset($_GET['q']) ? $_GET['q'] : "Khalanga";
