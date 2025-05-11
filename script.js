@@ -24,14 +24,21 @@ function errorWeatherData() {
 
 document.getElementById("date").textContent = new Date().toDateString();
 
-async function getWeather(city) {
-  try {
+async function getAndDisplayWeather(city) {
+  let data;
+  if (navigator.onLine) {
     const response = await fetch(
       `http://localhost/weatherApp/connection.php?q=${city}`
     );
-    const data = await response.json();
-    console.log(data);
+    data = await response.json();
+    // Save data to localStorage
+    localStorage.setItem(city, JSON.stringify(data));
+  } else {
+    // Offline: Retrieve data from localStorage
+    data = JSON.parse(localStorage.getItem(city));
+  }
 
+  try {
     if (!Array.isArray(data) || data.length === 0) {
       throw new Error("No data returned");
     }
@@ -53,11 +60,12 @@ async function getWeather(city) {
 }
 
 elements.btn.onclick = function () {
-  if (elements.input.value.trim()) getWeather(elements.input.value.trim());
+  if (elements.input.value.trim())
+    getAndDisplayWeather(elements.input.value.trim());
   else {
     elements.city.innerHTML = "Please enter a city name";
     errorWeatherData();
   }
 };
 
-getWeather("Khalanga");
+getAndDisplayWeather("Khalanga");
