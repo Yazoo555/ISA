@@ -69,4 +69,3 @@ elements.btn.onclick = function () {
 };
 
 getAndDisplayWeather("Khalanga");
-
