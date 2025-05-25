@@ -1,17 +1,21 @@
 <?php
-$serverName = "localhost";
-$userName = "root";
-$password = "";
-$database = "weatherapp";
+$serverName = "sql205.infinityfree.com";
+$userName = "if0_38967092";
+$password = "KcWTbl7HK9MI";
+$database = "if0_38967092_yazuweatherapp";
 
 $conn = mysqli_connect($serverName, $userName, $password);
 if (!$conn) exit;
 
-mysqli_query($conn, "CREATE DATABASE IF NOT EXISTS $database");
-mysqli_select_db($conn, $database);
+
+
+// mysqli_query($conn, "CREATE DATABASE IF NOT EXISTS $database");
+mysqli_select_db($conn, 'if0_38967092_yazuweatherapp');
+
+
 
 $createTable = "CREATE TABLE IF NOT EXISTS weather (
-    id  PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     city VARCHAR(100),
     humidity FLOAT NOT NULL,
     wind FLOAT NOT NULL,
@@ -22,7 +26,9 @@ $createTable = "CREATE TABLE IF NOT EXISTS weather (
     description VARCHAR(100),
     last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )";
+
 mysqli_query($conn, $createTable);
+
 
 $cityName = isset($_GET['q']) ? $_GET['q'] : "Khalanga";
 
@@ -34,6 +40,7 @@ if (mysqli_num_rows($result) == 0) {
     $url = "https://api.openweathermap.org/data/2.5/weather?q=$cityName&appid=$apiKey&units=metric";
     $response = file_get_contents($url);
     $data = json_decode($response, true);
+
 
     if (!isset($data['main'])) {
         http_response_code(404);
@@ -53,7 +60,7 @@ if (mysqli_num_rows($result) == 0) {
                VALUES ('$cityName', '$humidity', '$wind', '$pressure', '$temperature', '$wind_direction', '$icon', '$description')";
     mysqli_query($conn, $insert);
 
-    $result = mysqli_query($conn, "SELECT * FROM weather WHERE city = '$cityName' ORDER BY last_updated DESC LIMIT 1");
+    $result = mysqli_query($conn, query: "SELECT * FROM weather WHERE city = '$cityName' ORDER BY last_updated DESC LIMIT 1");
 }
 
 $rows = [];
@@ -62,4 +69,6 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 header('Content-Type: application/json');
 echo json_encode($rows);
+
 ?>
+

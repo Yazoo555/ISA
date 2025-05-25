@@ -28,7 +28,7 @@ async function getAndDisplayWeather(city) {
   let data;
   if (navigator.onLine) {
     const response = await fetch(
-      `http://localhost/weatherApp/connection.php?q=${city}`
+      `https://yajjuweather.rf.gd/weatherApp/connection.php?q=${city}`
     );
     data = await response.json();
     // Save data to localStorage
